@@ -7,86 +7,64 @@ import {
   Code2,
   Terminal,
   Activity,
-  Search
+  Server,
+  Bot
 } from "lucide-react";
-
-const Github = ({ size = 20, className = "" }) => (
-  <svg
-    viewBox="0 0 24 24"
-    width={size}
-    height={size}
-    stroke="currentColor"
-    strokeWidth="2"
-    fill="none"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-    className={className}
-  >
-    <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4" />
-    <path d="M9 18c-4.51 2-5-2-7-2" />
-  </svg>
-);
 
 const Project = () => {
   const [filter, setFilter] = useState("All");
 
   // Dynamically set title
   useEffect(() => {
-    document.title = "Projects | Meng - Portfolio";
+    document.title = "Experience & Projects | Meng - Portfolio";
   }, []);
 
   const projectsData = [
     {
-      title: "Student Management System",
-      category: "Full-Stack",
-      description: "Designed and developed a complete administrative system. Built with a responsive React frontend dashboard and secure Python API backend, organizing student enrollments, schedules, and grading metrics.",
-      technologies: ["React", "Python", "SQL", "MySQL", "REST API"],
-      demoUrl: "#",
-      githubUrl: "#"
+      title: "HR Management System",
+      category: "Business Systems",
+      description: "Employee registration, department management, attendance tracking (Check-in/out, QR, Location/geofencing), overtime workflows, and notification integration.",
+      technologies: ["React", "PostgreSQL", "REST APIs", "Backend Services", "Role-based Logic"],
+      icon: Activity
     },
     {
-      title: "Telegram AI Integration Bot",
-      category: "Full-Stack",
-      description: "Programmed a smart Telegram bot using Python for automation. Configured a React-based frontend view embedded inside the app for options adjustments, leveraging AI tools to accelerate build speed.",
-      technologies: ["Python", "React", "AI Integration", "XAMPP", "REST API"],
-      demoUrl: "#",
-      githubUrl: "#"
+      title: "Finance Management System",
+      category: "Business Systems",
+      description: "Chart of Accounts, Journal Entries, General Ledger, Trial Balance, Income Statement, Balance Sheet, Cash Flow, Expense Management, and Fixed Assets.",
+      technologies: ["Debit/Credit Validation", "Financial Data Structures", "Excel/PDF Export", "Relational DB"],
+      icon: Layers
     },
     {
-      title: "Legacy .NET System Modernization",
-      category: "Systems & IT",
-      description: "Maintained, debugged, and optimized legacy business database systems. Resolved critical application exceptions, optimized query loops, and modernised server operations using Visual Studio.",
-      technologies: ["C#", ".NET", "SQL Server", "Visual Studio", "System Maintenance"],
-      demoUrl: "#",
-      githubUrl: "#"
+      title: "Logistics Management System",
+      category: "Business Systems",
+      description: "Scalable architecture for logistics operations, designed to support increasing business transactions and high user volumes.",
+      technologies: ["Worker Services", "Redis", "Object Storage", "Background Processing", "PostgreSQL"],
+      icon: Server
     },
     {
-      title: "React Native UI Prototypes",
-      category: "UI/UX",
-      description: "Drafted high-fidelity layout interfaces and blueprints for cross-platform mobile apps. Provided clear vector wireframes and design parameters to remote coding teams.",
-      technologies: ["React Native", "UI/UX Design", "Figma", "Responsive Web Design"],
-      demoUrl: "#",
-      githubUrl: "#"
+      title: "System Architecture & Infrastructure",
+      category: "Architecture",
+      description: "Planned application infrastructure including Load Balancers, App Servers, Redis, PostgreSQL, Background Workers, and AWS S3.",
+      technologies: ["VPS Sizing", "Load Balancing", "SSL", "Monitoring & Alerting", "Backup Infrastructure"],
+      icon: CloudIcon
     },
     {
-      title: "Cloud Infrastructure & Server Evaluator",
-      category: "Systems & IT",
-      description: "Conducted systems research on virtual private servers (VPS) and dedicated hosting networks, providing pricing, capacity, and deployment roadmap options for corporate needs.",
-      technologies: ["Cloud VPS", "Dedicated Servers", "Networking", "Technical Documentation"],
-      demoUrl: "#",
-      githubUrl: "#"
+      title: "AI Video Assistant Concept",
+      category: "AI & Automation",
+      description: "An AI assistant for Adobe Premiere Pro. Converts natural-language instructions into structured JSON commands for editing operations via plugin.",
+      technologies: ["LLM", "Structured JSON", "Premiere Pro Plugin", "Video Processing", "AI Integration"],
+      icon: Bot
     },
     {
-      title: "QA System Testing Loop",
-      category: "Systems & IT",
-      description: "Administered systematic pre-deployment audits for external software deliveries. Logged bug statuses, managed compliance checks, and verified build stability.",
-      technologies: ["QA Testing", "Functional Testing", "Git", "Bug Verification"],
-      demoUrl: "#",
-      githubUrl: "#"
+      title: "Automated Notifications & Workflows",
+      category: "AI & Automation",
+      description: "Developed Telegram notification systems for automated attendance, overtime requests, approval workflows, and scheduled data processing.",
+      technologies: ["Python", "FastAPI", "Telegram Bot API", "APScheduler", "SQLite"],
+      icon: Terminal
     }
   ];
 
-  const categories = ["All", "Full-Stack", "UI/UX", "Systems & IT"];
+  const categories = ["All", "Business Systems", "Architecture", "AI & Automation"];
 
   const filteredProjects = filter === "All"
     ? projectsData
@@ -94,17 +72,17 @@ const Project = () => {
 
   return (
     <Layout>
-      <div className="flex flex-col gap-12 text-left max-w-6xl mx-auto">
+      <div className="flex flex-col gap-12 text-left max-w-6xl mx-auto py-8">
         
         {/* Intro */}
         <section className="flex flex-col gap-4 animate-slide-up">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-violet-500/10 border border-violet-500/20 text-violet-400 text-xs font-semibold w-fit">
             <Folder size={12} />
-            <span>Project Index</span>
+            <span>Professional Experience</span>
           </div>
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-slate-900 dark:text-white">Recent Works</h2>
+          <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-slate-900 dark:text-white">Software & Systems Development</h2>
           <p className="text-slate-600 dark:text-slate-400 text-base md:text-lg max-w-3xl leading-relaxed">
-            Here is a catalog of development projects, user interfaces, legacy environment refactoring, and server evaluations.
+            A catalog of business management systems, scalable system architectures, and AI-driven automation workflows I have designed and developed.
           </p>
         </section>
 
@@ -127,72 +105,71 @@ const Project = () => {
 
         {/* Project Grid */}
         <section className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 animate-slide-up delay-200">
-          {filteredProjects.map((project, idx) => (
-            <div
-              key={idx}
-              className="glass-panel rounded-2xl p-6 flex flex-col justify-between hover:border-violet-500/30 hover:shadow-[0_0_20px_rgba(124,58,237,0.1)] transition-all duration-300 transform hover:-translate-y-1 relative group overflow-hidden"
-            >
-              {/* Radial light gradient inside cards */}
-              <div className="absolute inset-0 bg-radial-gradient from-violet-500/5 to-transparent pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity"></div>
-              
-              <div className="flex flex-col gap-4 relative z-10">
-                <div className="flex items-center justify-between">
-                  <span className="text-xs font-mono font-bold text-violet-400 uppercase tracking-wider bg-violet-500/10 px-2.5 py-1 rounded-md border border-violet-500/20">
-                    {project.category}
-                  </span>
-                  <div className="flex items-center gap-1.5 text-slate-500 dark:text-slate-400 text-xs font-mono">
-                    <Activity size={12} className="text-emerald-500 animate-pulse" />
-                    <span>Deployed</span>
+          {filteredProjects.map((project, idx) => {
+            const IconComponent = project.icon;
+            return (
+              <div
+                key={idx}
+                className="glass-panel rounded-2xl p-6 flex flex-col justify-between hover:border-violet-500/30 hover:shadow-[0_0_20px_rgba(124,58,237,0.1)] transition-all duration-300 transform hover:-translate-y-1 relative group overflow-hidden"
+              >
+                <div className="absolute inset-0 bg-radial-gradient from-violet-500/5 to-transparent pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                
+                <div className="flex flex-col gap-4 relative z-10">
+                  <div className="flex items-center justify-between">
+                    <span className="text-xs font-mono font-bold text-violet-600 dark:text-violet-400 uppercase tracking-wider bg-violet-500/10 px-2.5 py-1 rounded-md border border-violet-500/20">
+                      {project.category}
+                    </span>
+                    <IconComponent size={18} className="text-slate-400 dark:text-slate-500" />
+                  </div>
+
+                  <h3 className="text-xl font-bold text-slate-900 dark:text-slate-100 group-hover:text-violet-600 dark:group-hover:text-violet-400 transition-colors">
+                    {project.title}
+                  </h3>
+                  
+                  <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed min-h-[80px]">
+                    {project.description}
+                  </p>
+                </div>
+
+                <div className="flex flex-col gap-4 mt-6 relative z-10">
+                  {/* Tech Badges */}
+                  <div className="flex flex-wrap gap-1.5">
+                    {project.technologies.map((tech, tIdx) => (
+                      <span
+                        key={tIdx}
+                        className="text-[11px] font-mono font-medium text-slate-600 dark:text-slate-300 bg-black/5 dark:bg-white/5 border border-slate-200/50 dark:border-white/5 px-2 py-0.5 rounded"
+                      >
+                        {tech}
+                      </span>
+                    ))}
                   </div>
                 </div>
-
-                <h3 className="text-xl font-bold text-slate-900 dark:text-slate-100 group-hover:text-violet-600 dark:group-hover:text-violet-300 transition-colors">
-                  {project.title}
-                </h3>
-                
-                <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed min-h-[80px]">
-                  {project.description}
-                </p>
               </div>
-
-              <div className="flex flex-col gap-4 mt-6 relative z-10">
-                {/* Tech Badges */}
-                <div className="flex flex-wrap gap-1.5">
-                  {project.technologies.map((tech, tIdx) => (
-                    <span
-                      key={tIdx}
-                      className="text-[11px] font-mono font-medium text-slate-600 dark:text-slate-300 bg-black/5 dark:bg-white/5 border border-slate-200/50 dark:border-white/5 px-2 py-0.5 rounded"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-
-                {/* Actions */}
-                <div className="flex items-center gap-4 pt-4 border-t border-slate-200/50 dark:border-white/5 text-sm font-semibold">
-                  <a
-                    href={project.demoUrl}
-                    className="flex items-center gap-1.5 text-violet-600 dark:text-violet-400 hover:text-violet-800 dark:hover:text-violet-300 transition-colors"
-                  >
-                    <Globe size={14} />
-                    <span>Live View</span>
-                  </a>
-                  <a
-                    href={project.githubUrl}
-                    className="flex items-center gap-1.5 text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 transition-colors"
-                  >
-                    <Github size={14} />
-                    <span>Codebase</span>
-                  </a>
-                </div>
-              </div>
-            </div>
-          ))}
+            );
+          })}
         </section>
 
       </div>
     </Layout>
   );
 };
+
+// Helper for the Cloud icon missing in imports
+const CloudIcon = ({ size, className }) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width={size}
+    height={size}
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    className={className}
+  >
+    <path d="M17.5 19a1.5 1.5 0 0 0 1.5-1.5 4.5 4.5 0 0 0-3-4.2V13a4.5 4.5 0 0 0-8.8-1.3A3.5 3.5 0 0 0 4 15.5a1.5 1.5 0 0 0 1.5 1.5Z"/>
+  </svg>
+);
 
 export default Project;

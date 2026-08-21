@@ -6,13 +6,14 @@ import {
   Database,
   Globe,
   ArrowRight,
-  Activity
+  Activity,
+  Bot
 } from "lucide-react";
 
 const Home = () => {
   // Dynamically set document title
   useEffect(() => {
-    document.title = "Meng | Full-Stack Dev & IT Support";
+    document.title = "Meng | Full-Stack Dev & IT Systems Engineer";
   }, []);
 
   return (
@@ -22,21 +23,19 @@ const Home = () => {
         {/* HERO SECTION */}
         <section className="flex flex-col lg:flex-row items-center gap-12 pt-4 md:pt-10">
           <div className="flex-1 flex flex-col gap-6 text-left animate-slide-up">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-violet-500/10 border border-violet-500/20 text-violet-400 text-xs font-semibold w-fit">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-violet-500/10 border border-violet-500/20 text-violet-600 dark:text-violet-400 text-xs font-semibold w-fit">
               <Activity size={12} className="animate-pulse" />
-              <span>Full-Stack Developer & IT Specialist</span>
+              <span>Full-Stack Developer & IT Systems Engineer</span>
             </div> 
 
             <h1 className="text-2xl sm:text-4xl lg:text-6xl font-bold tracking-tight leading-tight text-slate-900 dark:text-slate-400">
-              
               <span className="bg-gradient-to-r from-violet-600 via-indigo-600 to-cyan-600 dark:from-violet-400 dark:via-indigo-400 dark:to-cyan-400 bg-clip-text text-transparent">
                  MengEam Seng 
               </span>
-             
             </h1>
 
             <p className="text-slate-600 dark:text-slate-400 text-base sm:text-lg max-w-xl leading-relaxed">
-              I design modern, responsive React interfaces, engineer structured backend integrations (Python/Laravel/C#), support legacy systems, and maintain local network infrastructure.
+              I am a Full-Stack Software Developer and IT Systems Engineer with practical experience designing, developing, integrating, and troubleshooting business applications and IT systems. I enjoy turning real-world business requirements into reliable, scalable, and user-friendly software solutions.
             </p>
 
             <div className="flex flex-wrap gap-4 mt-2">
@@ -44,7 +43,7 @@ const Home = () => {
                 to="/projects"
                 className="flex items-center gap-2 px-6 py-3 rounded-xl bg-violet-600 hover:bg-violet-500 text-white font-medium shadow-sm hover:shadow-violet-600/35 transition-all duration-300 transform hover:-translate-y-0.5"
               >
-                <span>View Projects</span>
+                <span>View Experience</span>
                 <ArrowRight size={16} />
               </Link>
 
@@ -52,7 +51,7 @@ const Home = () => {
                 to="/contact"
                 className="flex items-center gap-2 px-6 py-3 rounded-xl bg-black/5 dark:bg-white/5 border border-slate-200 dark:border-white/10 hover:border-violet-500/35 hover:bg-black/10 dark:hover:bg-white/10 text-slate-800 dark:text-white font-medium transition-all duration-300"
               >
-                <span>File Support Ticket</span>
+                <span>Get In Touch</span>
               </Link>
             </div>
           </div>
@@ -75,13 +74,9 @@ const Home = () => {
               <div className="absolute inset-4 rounded-2xl border border-dashed border-slate-300 dark:border-slate-800 pointer-events-none transition-colors duration-500 group-hover:border-violet-500/30"></div>
 
               {/* Corner Tech Brackets */}
-              {/* Top-Left */}
               <div className="absolute top-2 left-2 w-4 h-4 border-t-2 border-l-2 border-violet-500/40 dark:border-violet-400/40 group-hover:border-violet-500 transition-colors duration-300"></div>
-              {/* Top-Right */}
               <div className="absolute top-2 right-2 w-4 h-4 border-t-2 border-r-2 border-violet-500/40 dark:border-violet-400/40 group-hover:border-violet-500 transition-colors duration-300"></div>
-              {/* Bottom-Left */}
               <div className="absolute bottom-2 left-2 w-4 h-4 border-b-2 border-l-2 border-violet-500/40 dark:border-violet-400/40 group-hover:border-violet-500 transition-colors duration-300"></div>
-              {/* Bottom-Right */}
               <div className="absolute bottom-2 right-2 w-4 h-4 border-b-2 border-r-2 border-violet-500/40 dark:border-violet-400/40 group-hover:border-violet-500 transition-colors duration-300"></div>
 
               {/* Lined watermark label */}
@@ -94,7 +89,7 @@ const Home = () => {
               <div className="absolute inset-x-0 bottom-0 -top-16 flex items-end justify-center pointer-events-none z-10">
                 <img
                   src="/src/assets/myFav.png" 
-                  alt="Meng - Full-Stack Developer & IT Support Specialist"
+                  alt="Meng - Full-Stack Developer & IT Systems Engineer"
                   className="w-[800px] h-[400px] object-contain opacity-90 transition-all duration-500 transform group-hover:scale-115 group-hover:-translate-y-6 filter drop-shadow-[0_12px_24px_rgba(0,0,0,0.15)] dark:drop-shadow-[0_12px_30px_rgba(0,0,0,0.4)]"
                 />
               </div>
@@ -103,37 +98,35 @@ const Home = () => {
           </div>
         </section>
 
-
-
         {/* CORE SPECIALTIES SUMMARY */}
         <section className="grid md:grid-cols-3 gap-6">
-          <div className="glass-panel rounded-2xl p-6 hover:border-violet-500/30 hover:shadow-[0_0_20px_rgba(124,58,237,0.06)] dark:hover:shadow-[0_0_20px_rgba(124,58,237,0.1)] transition-all duration-300 text-left animate-slide-up delay-300">
-            <div className="p-3 bg-violet-500/10 border border-violet-500/20 text-violet-600 dark:text-violet-400 rounded-xl w-fit mb-4">
+          <div className="glass-panel rounded-2xl p-6 hover:border-violet-500/30 hover:shadow-[0_0_20px_rgba(124,58,237,0.06)] dark:hover:shadow-[0_0_20px_rgba(124,58,237,0.1)] transition-all duration-300 text-left animate-slide-up delay-300 group">
+            <div className="p-3 bg-violet-500/10 border border-violet-500/20 text-violet-600 dark:text-violet-400 rounded-xl w-fit mb-4 group-hover:scale-110 transition-transform">
               <Cpu size={24} />
             </div>
-            <h3 className="text-xl font-bold mb-2 text-slate-800 dark:text-slate-600">Software Development</h3>
+            <h3 className="text-xl font-bold mb-2 text-slate-800 dark:text-slate-200">Full-Stack Development</h3>
             <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
-              Engineering web systems using React, Python backends, Laravel, C#, and SQL. Experienced in modernizing legacy structures and building Telegram integrations.
+              Engineering end-to-end web systems using React, Node.js, Python, and SQL. Building REST APIs and responsive dashboards tailored to complex business workflows.
             </p>
           </div>
 
-          <div className="glass-panel rounded-2xl p-6 hover:border-indigo-500/30 hover:shadow-[0_0_20px_rgba(79,70,229,0.06)] dark:hover:shadow-[0_0_20px_rgba(79,70,229,0.1)] transition-all duration-300 text-left animate-slide-up delay-400">
-            <div className="p-3 bg-indigo-500/10 border border-indigo-500/20 text-indigo-600 dark:text-indigo-400 rounded-xl w-fit mb-4">
-              <Globe size={24} />
-            </div>
-            <h3 className="text-xl font-bold mb-2 text-slate-800 dark:text-slate-600">UI/UX & Prototyping</h3>
-            <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
-              Designing user-centered layouts, interactive mobile mockups (React Native), and coding responsive UI platforms with HTML/CSS libraries.
-            </p>
-          </div>
-
-          <div className="glass-panel rounded-2xl p-6 hover:border-cyan-500/30 hover:shadow-[0_0_20px_rgba(6,182,212,0.06)] dark:hover:shadow-[0_0_20px_rgba(6,182,212,0.1)] transition-all duration-300 text-left animate-slide-up delay-500">
-            <div className="p-3 bg-cyan-500/10 border border-cyan-500/20 text-cyan-600 dark:text-cyan-400 rounded-xl w-fit mb-4">
+          <div className="glass-panel rounded-2xl p-6 hover:border-indigo-500/30 hover:shadow-[0_0_20px_rgba(79,70,229,0.06)] dark:hover:shadow-[0_0_20px_rgba(79,70,229,0.1)] transition-all duration-300 text-left animate-slide-up delay-400 group">
+            <div className="p-3 bg-indigo-500/10 border border-indigo-500/20 text-indigo-600 dark:text-indigo-400 rounded-xl w-fit mb-4 group-hover:scale-110 transition-transform">
               <Database size={24} />
             </div>
-            <h3 className="text-xl font-bold mb-2 text-slate-800 dark:text-slate-600">Systems & QA Support</h3>
+            <h3 className="text-xl font-bold mb-2 text-slate-800 dark:text-slate-200">Infrastructure & DevOps</h3>
             <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
-              Analyzing cloud virtual server structures (VPS), verifying software builds via functional test pipelines, and resolving system hardware/OS concerns.
+              Designing scalable system architectures using Application Servers, Redis, PostgreSQL, and AWS S3. Planning networking, load balancing, and secure deployments.
+            </p>
+          </div>
+
+          <div className="glass-panel rounded-2xl p-6 hover:border-cyan-500/30 hover:shadow-[0_0_20px_rgba(6,182,212,0.06)] dark:hover:shadow-[0_0_20px_rgba(6,182,212,0.1)] transition-all duration-300 text-left animate-slide-up delay-500 group">
+            <div className="p-3 bg-cyan-500/10 border border-cyan-500/20 text-cyan-600 dark:text-cyan-400 rounded-xl w-fit mb-4 group-hover:scale-110 transition-transform">
+              <Bot size={24} />
+            </div>
+            <h3 className="text-xl font-bold mb-2 text-slate-800 dark:text-slate-200">AI & Automation</h3>
+            <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+              Integrating local LLMs (Ollama, Qwen) and building automated workflows (Telegram Bots, scheduled tasks). Enhancing engineering speed with AI assistants.
             </p>
           </div>
         </section>

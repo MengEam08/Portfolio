@@ -6,7 +6,9 @@ import {
   Database,
   Sliders,
   Settings,
-  Cpu
+  Cpu,
+  MonitorPlay,
+  Network
 } from "lucide-react";
 
 const Skill = () => {
@@ -17,16 +19,16 @@ const Skill = () => {
 
   const skillGroups = [
     {
-      title: "Frontend Engineering",
+      title: "Frontend Development",
       icon: Code2,
       color: "text-violet-400 border-violet-500/20 bg-violet-500/5",
       accent: "bg-violet-500 shadow-[0_0_10px_#8B5CF6]",
       items: [
-        { name: "React", level: 90, desc: "Created complex dashboards, hook architectures, and routing matrices." },
-        { name: "Tailwind CSS", level: 95, desc: "Built modern custom utility designs and glassmorphic user flows." },
-        { name: "JavaScript (ES6+)", level: 85, desc: "Developed dynamic frontend state managers and async fetch clients." },
-        { name: "Bootstrap & HTML5", level: 90, desc: "Standard responsive columns, accessible markup, and layout styling." },
-        { name: "Responsive Web Design", level: 95, desc: "Fluid layouts matching mobile, tablet, and widescreen viewports." }
+        { name: "React & Next.js", level: 95, desc: "Building scalable interfaces and SPAs." },
+        { name: "TypeScript & JS", level: 90, desc: "Strongly typed logic and dynamic state." },
+        { name: "Tailwind CSS", level: 95, desc: "Utility-first styling, glassmorphism, responsive UI." },
+        { name: "Vite & React Router", level: 90, desc: "Fast build tools and complex application routing." },
+        { name: "Dashboard & Tables", level: 90, desc: "Data filtering, form validation, and Excel/PDF export." }
       ]
     },
     {
@@ -35,43 +37,57 @@ const Skill = () => {
       color: "text-indigo-400 border-indigo-500/20 bg-indigo-500/5",
       accent: "bg-indigo-500 shadow-[0_0_10px_#6366F1]",
       items: [
-        { name: "Python", level: 85, desc: "Built Flask/FastAPI structures, Telegram APIs, and automation routines." },
-        { name: "Laravel (PHP)", level: 80, desc: "MVC frameworks, routing pipelines, Eloquent ORMs, and secure models." },
-        { name: "C# (.NET)", level: 75, desc: "Maintained and fixed legacy software systems, managing thread loads." },
-        { name: "Java", level: 60, desc: "Fundamental object-oriented patterns and memory structures." }
+        { name: "Node.js & Express.js", level: 90, desc: "REST APIs, background processing, and middlewares." },
+        { name: "Python & FastAPI", level: 85, desc: "AI integrations, data processing, and fast endpoints." },
+        { name: "Java & Spring Boot", level: 75, desc: "Enterprise patterns and structured architectures." },
+        { name: "API Integration", level: 90, desc: "Auth, validation, error handling, and webhooks." }
       ]
     },
     {
-      title: "Databases & Storage",
+      title: "Database & Data",
       icon: Database,
       color: "text-sky-400 border-sky-500/20 bg-sky-500/5",
       accent: "bg-sky-500 shadow-[0_0_10px_#0EA5E9]",
       items: [
-        { name: "SQL", level: 85, desc: "Wrote structured statements, custom joins, and indexing schemas." },
-        { name: "MySQL", level: 85, desc: "Configured tables, primary keys, relational maps, and connection pools." }
+        { name: "PostgreSQL", level: 90, desc: "Relational modeling, constraints, relationships." },
+        { name: "SQL & SQLite", level: 85, desc: "Complex queries, data reporting, lightweight DBs." },
+        { name: "Financial Data Management", level: 85, desc: "Excel data processing and transaction schemas." }
       ]
     },
     {
-      title: "Tools & Environments",
+      title: "Infrastructure & DevOps",
       icon: Settings,
       color: "text-cyan-400 border-cyan-500/20 bg-cyan-500/5",
       accent: "bg-cyan-500 shadow-[0_0_10px_#06B6D4]",
       items: [
-        { name: "Git & Version Control", level: 88, desc: "Handled branch trees, merge conflict resolutions, and commit tags." },
-        { name: "XAMPP", level: 90, desc: "Configured Apache virtual hosts and local database servers." },
-        { name: "Visual Studio & VS Code", level: 92, desc: "Code compiler plugins, remote tunnels, and debugging pipelines." }
+        { name: "Linux / Ubuntu & VPS", level: 85, desc: "Server provisioning, application & worker servers." },
+        { name: "Redis & PostgreSQL Infra", level: 80, desc: "Caching, state management, and DB hosting." },
+        { name: "Load Balancing & SSL", level: 85, desc: "High availability, DNS, reverse proxies." },
+        { name: "AWS S3 & Backups", level: 80, desc: "Object storage and retention planning." }
       ]
     },
     {
-      title: "IT Support & Specialties",
-      icon: Cpu,
+      title: "Networking & IT Support",
+      icon: Network,
       color: "text-pink-400 border-pink-500/20 bg-pink-500/5",
       accent: "bg-pink-500 shadow-[0_0_10px_#EC4899]",
       items: [
-        { name: "Malware Clean & Scan", level: 95, desc: "Removed trojans, ran quarantine protocols, and patched systems." },
-        { name: "Hardware Diagnostic", level: 90, desc: "Isolated ram failures, system bottlenecks, and hardware faults." },
-        { name: "Cloud VPS Research", level: 88, desc: "Analyzed virtual cloud instances, compute units, and pricing scales." },
-        { name: "QA Release Audits", level: 90, desc: "Conducted acceptance check matrices on third-party deliverables." }
+        { name: "TCP/IP & IPv4 / NAT", level: 90, desc: "Network fundamentals, routing, troubleshooting." },
+        { name: "Wi-Fi & DNS", level: 90, desc: "Local connectivity and domain resolution." },
+        { name: "PowerShell & Windows", level: 85, desc: "OS configuration and developer environment setups." },
+        { name: "iOS IPA Deployment", level: 80, desc: "Apple Dev Mode, certs, and mobile device management." }
+      ]
+    },
+    {
+      title: "AI & Video Automation",
+      icon: MonitorPlay,
+      color: "text-emerald-400 border-emerald-500/20 bg-emerald-500/5",
+      accent: "bg-emerald-500 shadow-[0_0_10px_#10B981]",
+      items: [
+        { name: "Local LLMs (Ollama, Qwen)", level: 85, desc: "AI Coding tools, structured JSON, app concepts." },
+        { name: "Workflow Automation", level: 90, desc: "Telegram Bots, scheduled tasks, processing pipelines." },
+        { name: "FFmpeg & yt-dlp", level: 85, desc: "Video processing automation and media handling." },
+        { name: "Premiere Pro Plugin Dev", level: 80, desc: "AI video editing concepts and automations." }
       ]
     }
   ];
@@ -88,7 +104,7 @@ const Skill = () => {
           </div>
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-slate-900 dark:text-white">Technical Skills</h2>
           <p className="text-slate-600 dark:text-slate-400 text-base md:text-lg max-w-3xl leading-relaxed">
-            A comprehensive review of my technology stack, developer toolkits, and infrastructure services.
+            A comprehensive overview of my technology stack, framework proficiencies, and systems engineering tools.
           </p>
         </section>
 
@@ -99,7 +115,7 @@ const Skill = () => {
             return (
               <div
                 key={gIdx}
-                className={`bg-slate-100/40 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 flex flex-col gap-6 hover:border-slate-300 dark:hover:border-slate-700 transition-colors duration-300 ${gIdx === skillGroups.length - 1 ? "md:col-span-2" : ""}`}
+                className={`bg-slate-100/40 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 flex flex-col gap-6 hover:border-slate-300 dark:hover:border-slate-700 transition-colors duration-300`}
               >
                 <div className="flex items-center gap-3">
                   <div className={`p-2.5 rounded-xl border ${group.color}`}>
@@ -108,7 +124,7 @@ const Skill = () => {
                   <h3 className="text-lg font-bold text-slate-800 dark:text-slate-100">{group.title}</h3>
                 </div>
 
-                <div className="grid sm:grid-cols-2 gap-6">
+                <div className="grid sm:grid-cols-1 gap-6">
                   {group.items.map((skill, sIdx) => (
                     <div key={sIdx} className="flex flex-col gap-1.5 group/skill">
                       <div className="flex justify-between items-center">
