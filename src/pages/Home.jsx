@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import Layout from "../components/layout/Layout";
+import myfav from "../assets/myFav.png"
 import {
   Cpu,
   Database,
@@ -88,7 +89,7 @@ const Home = () => {
               {/* Portrait Image (pops out of the top of the frame on hover) */}
               <div className="absolute inset-x-0 bottom-0 -top-16 flex items-end justify-center pointer-events-none z-10">
                 <img
-                  src="/src/assets/myFav.png" 
+                  src={myfav}
                   alt="Meng - Full-Stack Developer & IT Systems Engineer"
                   className="w-[800px] h-[400px] object-contain opacity-90 transition-all duration-500 transform group-hover:scale-115 group-hover:-translate-y-6 filter drop-shadow-[0_12px_24px_rgba(0,0,0,0.15)] dark:drop-shadow-[0_12px_30px_rgba(0,0,0,0.4)]"
                 />
