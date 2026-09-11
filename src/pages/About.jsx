@@ -1,5 +1,7 @@
 import React, { useEffect } from "react";
 import Layout from "../components/layout/Layout";
+import BorderGlow from "../components/common/BorderGlow";
+import ScrollReveal from "../components/common/ScrollReveal";
 import {
   Code,
   CheckCircle2,
@@ -99,8 +101,18 @@ const About = () => {
             <span>Profile Summary</span>
           </div>
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-slate-900 dark:text-white">About My Experience</h2>
-          <p className="text-slate-600 dark:text-slate-400 text-base md:text-lg leading-relaxed max-w-3xl">
+          <ScrollReveal
+            baseOpacity={0.08}
+            enableBlur={true}
+            baseRotation={2}
+            blurStrength={6}
+            containerClassName="max-w-3xl my-2"
+            textClassName="text-slate-700 dark:text-slate-200 text-lg md:text-xl font-normal leading-relaxed"
+            wordAnimationEnd="bottom 75%"
+          >
             I am a Full-Stack Software Developer and IT Systems Engineer with practical experience designing, developing, integrating, and troubleshooting business applications and IT systems.
+          </ScrollReveal>
+          <p className="text-slate-600 dark:text-slate-400 text-base md:text-lg leading-relaxed max-w-3xl">
             My experience covers frontend and backend development, database design, REST API development, system architecture, infrastructure planning, networking, automation, QA/testing, and AI-assisted application development.
           </p>
           <p className="text-slate-600 dark:text-slate-400 text-base md:text-lg leading-relaxed max-w-3xl mt-2">
@@ -115,26 +127,34 @@ const About = () => {
             {coreFocus.map((focus, index) => {
               const Icon = focus.icon;
               return (
-                <div
+                <BorderGlow
                   key={index}
-                  className="glass-panel rounded-2xl p-6 hover:border-violet-500/30 transition-all duration-300 flex flex-col gap-4 relative group hover:shadow-[0_0_20px_rgba(124,58,237,0.1)]"
+                  borderRadius={16}
+                  edgeSensitivity={30}
+                  glowRadius={35}
+                  glowIntensity={1}
+                  colors={["#c084fc", "#818cf8", "#38bdf8"]}
+                  glowColor="260 80 80"
+                  className="h-full"
                 >
-                  <div className="flex items-center gap-3">
-                    <div className={`p-2.5 rounded-xl border ${focus.bg} ${focus.color}`}>
-                      <Icon size={20} />
+                  <div className="glass-panel rounded-2xl p-6 h-full transition-all duration-300 flex flex-col gap-4 relative group hover:shadow-[0_0_20px_rgba(124,58,237,0.1)]">
+                    <div className="flex items-center gap-3">
+                      <div className={`p-2.5 rounded-xl border ${focus.bg} ${focus.color}`}>
+                        <Icon size={20} />
+                      </div>
+                      <h4 className="text-lg font-bold text-slate-900 dark:text-slate-100">{focus.title}</h4>
                     </div>
-                    <h4 className="text-lg font-bold text-slate-900 dark:text-slate-100">{focus.title}</h4>
+                    
+                    <ul className="flex flex-col gap-2.5 text-sm text-slate-600 dark:text-slate-400 pl-2">
+                      {focus.bullets.map((bullet, idx) => (
+                        <li key={idx} className="flex items-start gap-2 leading-relaxed">
+                          <span className={`inline-block w-1.5 h-1.5 rounded-full mt-1.5 shrink-0 ${focus.color} opacity-75`}></span>
+                          <span>{bullet}</span>
+                        </li>
+                      ))}
+                    </ul>
                   </div>
-                  
-                  <ul className="flex flex-col gap-2.5 text-sm text-slate-600 dark:text-slate-400 pl-2">
-                    {focus.bullets.map((bullet, idx) => (
-                      <li key={idx} className="flex items-start gap-2 leading-relaxed">
-                        <span className={`inline-block w-1.5 h-1.5 rounded-full mt-1.5 shrink-0 ${focus.color} opacity-75`}></span>
-                        <span>{bullet}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+                </BorderGlow>
               );
             })}
           </div>
@@ -176,17 +196,27 @@ const About = () => {
               <Target className="text-violet-500" size={24} />
               <h3 className="text-2xl font-bold text-slate-800 dark:text-slate-200">Career Direction</h3>
             </div>
-            <div className="glass-panel p-6 rounded-2xl border border-violet-500/20 bg-violet-500/5 h-full">
-              <p className="text-slate-600 dark:text-slate-300 leading-relaxed font-medium">
-                My long-term goal is to become a strong software and systems engineer capable of working across the entire technology lifecycle:
-              </p>
-              <div className="mt-6 text-sm text-violet-700 dark:text-violet-300 font-mono font-bold leading-loose">
-                Business Requirements → System Design → Development → Database → Infrastructure → Deployment → Testing → Monitoring → Automation → AI Integration
+            <BorderGlow
+              borderRadius={16}
+              edgeSensitivity={30}
+              glowRadius={35}
+              glowIntensity={1}
+              colors={["#c084fc", "#a855f7", "#6366f1"]}
+              glowColor="270 80 80"
+              className="h-full"
+            >
+              <div className="glass-panel p-6 rounded-2xl border border-violet-500/20 bg-violet-500/5 h-full">
+                <p className="text-slate-600 dark:text-slate-300 leading-relaxed font-medium">
+                  My long-term goal is to become a strong software and systems engineer capable of working across the entire technology lifecycle:
+                </p>
+                <div className="mt-6 text-sm text-violet-700 dark:text-violet-300 font-mono font-bold leading-loose">
+                  Business Requirements → System Design → Development → Database → Infrastructure → Deployment → Testing → Monitoring → Automation → AI Integration
+                </div>
+                <p className="text-slate-600 dark:text-slate-400 mt-6 leading-relaxed">
+                  I am particularly interested in building practical technology solutions that solve real business problems and can scale from small internal applications into reliable production systems.
+                </p>
               </div>
-              <p className="text-slate-600 dark:text-slate-400 mt-6 leading-relaxed">
-                I am particularly interested in building practical technology solutions that solve real business problems and can scale from small internal applications into reliable production systems.
-              </p>
-            </div>
+            </BorderGlow>
           </section>
 
           <section className="flex flex-col gap-6">
@@ -194,16 +224,26 @@ const About = () => {
               <Map className="text-indigo-500" size={24} />
               <h3 className="text-2xl font-bold text-slate-800 dark:text-slate-200">Areas of Interest</h3>
             </div>
-            <div className="glass-panel p-6 rounded-2xl h-full flex flex-col justify-center">
-               <ul className="grid grid-cols-1 sm:grid-cols-2 gap-y-3 gap-x-4">
-                  {interests.map((interest, idx) => (
-                    <li key={idx} className="flex items-center gap-2 text-sm text-slate-700 dark:text-slate-300">
-                      <div className="w-1.5 h-1.5 rounded-full bg-indigo-500 shrink-0"></div>
-                      <span>{interest}</span>
-                    </li>
-                  ))}
-               </ul>
-            </div>
+            <BorderGlow
+              borderRadius={16}
+              edgeSensitivity={30}
+              glowRadius={35}
+              glowIntensity={1}
+              colors={["#818cf8", "#38bdf8", "#34d399"]}
+              glowColor="230 80 80"
+              className="h-full"
+            >
+              <div className="glass-panel p-6 rounded-2xl h-full flex flex-col justify-center">
+                 <ul className="grid grid-cols-1 sm:grid-cols-2 gap-y-3 gap-x-4">
+                    {interests.map((interest, idx) => (
+                      <li key={idx} className="flex items-center gap-2 text-sm text-slate-700 dark:text-slate-300">
+                        <div className="w-1.5 h-1.5 rounded-full bg-indigo-500 shrink-0"></div>
+                        <span>{interest}</span>
+                      </li>
+                    ))}
+                 </ul>
+              </div>
+            </BorderGlow>
           </section>
         </div>
 

@@ -1,11 +1,15 @@
-import React, { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import MyNavbar from "../common/MyNavbar";
+import { useScrollSpeed } from "../../hooks/useScrollSpeed";
 
 const routeOrder = ["/", "/about", "/projects", "/skills", "/contact"];
 
 const Layout = ({ children }) => {
   const location = useLocation();
+  
+  // Accelerate and smooth scroll speed
+  useScrollSpeed(1.65);
   
   // Theme State
   const [theme, setTheme] = useState(localStorage.getItem("theme") || "dark");
@@ -21,20 +25,20 @@ const Layout = ({ children }) => {
 
   // Page Transition Direction Check
   const currentIndex = routeOrder.indexOf(location.pathname);
-  const indexRef = useRef(0);
-  
-  const direction = currentIndex >= indexRef.current ? "forward" : "backward";
-  
-  useEffect(() => {
-    indexRef.current = currentIndex;
-  }, [currentIndex]);
+  const [prevIndex, setPrevIndex] = useState(currentIndex);
+  const [direction, setDirection] = useState("forward");
+
+  if (prevIndex !== currentIndex) {
+    setDirection(currentIndex >= prevIndex ? "forward" : "backward");
+    setPrevIndex(currentIndex);
+  }
 
   const flipClass = direction === "forward" 
     ? "animate-page-flip-forward" 
     : "animate-page-flip-backward";
 
   return (
-    <div className="min-h-screen bg-gradient-to-tr from-[#ffffff] via-[#f8fafc] to-[#ffffff] dark:from-[#030712] dark:via-[#0b0f19] dark:to-[#030712] text-slate-800 dark:text-slate-100 relative overflow-x-hidden notebook-overlay">
+    <div className="min-h-screen bg-gradient-to-tr from-[#ffffff] via-[#f8fafc] to-[#ffffff] dark:from-[#030712] dark:via-[#0b0f19] dark:to-[#030712] text-slate-800 dark:text-slate-100 relative overflow-x-clip notebook-overlay">
       {/* Subtle background glow highlights */}
       <div className="fixed top-0 left-0 w-[500px] h-[500px] bg-violet-500/5 dark:bg-violet-600/5 rounded-full blur-[120px] pointer-events-none"></div>
       <div className="fixed bottom-0 right-0 w-[500px] h-[500px] bg-indigo-500/5 dark:bg-indigo-600/5 rounded-full blur-[120px] pointer-events-none"></div>

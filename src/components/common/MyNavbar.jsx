@@ -19,7 +19,7 @@ const MyNavbar = ({ theme, toggleTheme }) => {
 
   const navItems = [
     { path: "/", label: "Home", icon: Home },
-    { path: "/about", label: "About", icon: User },
+    // { path: "/about", label: "About", icon: User },
     { path: "/projects", label: "Projects", icon: FolderKanban },
     { path: "/skills", label: "Skills", icon: Code2 },
     { path: "/contact", label: "Contact", icon: MessageCircle },
@@ -34,8 +34,8 @@ const MyNavbar = ({ theme, toggleTheme }) => {
   };
 
   return (
-    <header className="sticky top-4 z-50 w-full px-4 max-w-7xl mx-auto">
-      <div className="glass-panel rounded-2xl px-6 py-4 flex items-center justify-between shadow-sm dark:shadow-[0_8px_32px_rgba(0,0,0,0.4)]">
+    <header className="sticky top-3 sm:top-4 z-50 w-full px-4 max-w-7xl mx-auto transition-all duration-300">
+      <div className="glass-panel rounded-2xl px-5 sm:px-6 py-3.5 sm:py-4 flex items-center justify-between shadow-md dark:shadow-[0_8px_32px_rgba(0,0,0,0.5)] border border-slate-200/80 dark:border-white/10 bg-white/80 dark:bg-slate-950/80 backdrop-blur-xl">
         {/* Brand Logo */}
         <Link to="/" className="flex items-center gap-2 group">
           <span className="text-xl font-bold tracking-tight bg-gradient-to-r from-violet-600 to-indigo-600 dark:from-violet-400 dark:to-indigo-400 bg-clip-text text-transparent group-hover:from-violet-500 dark:group-hover:from-violet-300 group-hover:to-indigo-500 dark:group-hover:to-indigo-300 transition-colors">
