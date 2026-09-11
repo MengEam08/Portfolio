@@ -2,11 +2,28 @@
 @import "flowbite-react/plugin/tailwindcss";
 @source "../.flowbite-react/class-list.json";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
+@font-face {
+  font-family: "Krasar-Regular";
+  src: url("./assets/fonts/Krasar-Regular.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
 @font-face {
   font-family: "MyFont";
   src: url("./assets/fonts/Krasar-Regular.ttf") format("truetype");
-  font-weight: normal;
+  font-weight: 100 900;
   font-style: normal;
+  font-display: swap;
+}
+
+@theme {
+  --font-*: initial;
+  --font-sans: "Krasar-Regular", "MyFont", sans-serif;
+  --font-mono: "Krasar-Regular", "MyFont", monospace;
 }
 
 :root {
@@ -24,8 +41,12 @@
 }
 
 @layer base {
-  body {
-    font-family: 'Inter', 'MyFont', sans-serif;
+  *, ::before, ::after {
+    font-family: "Krasar-Regular", "MyFont", sans-serif;
+  }
+
+  html, body {
+    font-family: "Krasar-Regular", "MyFont", sans-serif;
     background-color: #ffffff;
     color: #1e293b;
     transition: background-color 0.3s ease, color 0.3s ease;
@@ -36,13 +57,30 @@
     color: #f8fafc;
   }
   
-  h1, h2, h3, h4, h5, h6 {
-    font-family: 'Space Grotesk', sans-serif;
-    letter-spacing: -0.02em;
+  /* Main title color in light mode is pure black */
+  h1, h2, h3, h4, h5, h6, .main-title {
+    font-family: "Krasar-Regular", "MyFont", sans-serif;
+    letter-spacing: -0.01em;
+    color: #000000;
+  }
+
+  /* In dark mode, titles return to crisp white */
+  html.dark h1,
+  html.dark h2,
+  html.dark h3,
+  html.dark h4,
+  html.dark h5,
+  html.dark h6,
+  html.dark .main-title {
+    color: #ffffff;
+  }
+
+  button, input, textarea, select, a, p, span, div, label {
+    font-family: "Krasar-Regular", "MyFont", sans-serif;
   }
 
   code, pre {
-    font-family: 'Fira Code', monospace;
+    font-family: "Krasar-Regular", "MyFont", monospace;
   }
 }
 

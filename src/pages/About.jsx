@@ -100,7 +100,7 @@ const About = () => {
             <Sparkles size={12} />
             <span>Profile Summary</span>
           </div>
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-slate-900 dark:text-white">About My Experience</h2>
+          <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-black dark:text-white">About My Experience</h2>
           <ScrollReveal
             baseOpacity={0.08}
             enableBlur={true}
@@ -122,7 +122,7 @@ const About = () => {
 
         {/* Expertise Cards */}
         <section className="flex flex-col gap-8 animate-slide-up delay-200">
-          <h3 className="text-2xl font-bold text-slate-800 dark:text-slate-200">Core Expertise</h3>
+          <h3 className="text-2xl font-bold text-black dark:text-slate-200">Core Expertise</h3>
           <div className="grid md:grid-cols-2 gap-6">
             {coreFocus.map((focus, index) => {
               const Icon = focus.icon;
@@ -142,7 +142,7 @@ const About = () => {
                       <div className={`p-2.5 rounded-xl border ${focus.bg} ${focus.color}`}>
                         <Icon size={20} />
                       </div>
-                      <h4 className="text-lg font-bold text-slate-900 dark:text-slate-100">{focus.title}</h4>
+                      <h4 className="text-lg font-bold text-black dark:text-slate-100">{focus.title}</h4>
                     </div>
                     
                     <ul className="flex flex-col gap-2.5 text-sm text-slate-600 dark:text-slate-400 pl-2">
@@ -164,7 +164,7 @@ const About = () => {
         <section className="flex flex-col gap-8 animate-slide-up delay-300">
           <div className="flex items-center gap-3">
             <Wrench className="text-cyan-500" size={28} />
-            <h3 className="text-2xl font-bold text-slate-800 dark:text-slate-200">Problem Solving & Troubleshooting</h3>
+            <h3 className="text-2xl font-bold text-black dark:text-slate-200">Problem Solving & Troubleshooting</h3>
           </div>
           <p className="text-slate-600 dark:text-slate-400 text-base">
             A significant part of my IT experience involves diagnosing and resolving technical problems. I have worked on issues involving API HTTP 500 errors, PostgreSQL constraint errors, JS runtime errors, React/Vite config, Windows networking, DNS, background task failures, and more.
@@ -194,7 +194,7 @@ const About = () => {
           <section className="flex flex-col gap-6">
              <div className="flex items-center gap-3">
               <Target className="text-violet-500" size={24} />
-              <h3 className="text-2xl font-bold text-slate-800 dark:text-slate-200">Career Direction</h3>
+              <h3 className="text-2xl font-bold text-black dark:text-slate-200">Career Direction</h3>
             </div>
             <BorderGlow
               borderRadius={16}
@@ -222,7 +222,7 @@ const About = () => {
           <section className="flex flex-col gap-6">
              <div className="flex items-center gap-3">
               <Map className="text-indigo-500" size={24} />
-              <h3 className="text-2xl font-bold text-slate-800 dark:text-slate-200">Areas of Interest</h3>
+              <h3 className="text-2xl font-bold text-black dark:text-slate-200">Areas of Interest</h3>
             </div>
             <BorderGlow
               borderRadius={16}

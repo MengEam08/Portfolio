@@ -118,7 +118,7 @@ const Skill = () => {
             <Sliders size={12} />
             <span>Capabilities Matrix</span>
           </div>
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-slate-900 dark:text-white">Technical Skills</h2>
+          <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-black dark:text-white">Technical Skills</h2>
           <p className="text-slate-600 dark:text-slate-400 text-base md:text-lg max-w-3xl leading-relaxed">
             A comprehensive overview of my technology stack, framework proficiencies, and systems engineering tools.
           </p>
@@ -146,14 +146,14 @@ const Skill = () => {
                     <div className={`p-2.5 rounded-xl border ${group.color}`}>
                       <Icon size={20} />
                     </div>
-                    <h3 className="text-lg font-bold text-slate-800 dark:text-slate-100">{group.title}</h3>
+                    <h3 className="text-lg font-bold text-black dark:text-slate-100">{group.title}</h3>
                   </div>
 
                   <div className="grid sm:grid-cols-1 gap-6">
                     {group.items.map((skill, sIdx) => (
                       <div key={sIdx} className="flex flex-col gap-1.5 group/skill">
                         <div className="flex justify-between items-center">
-                          <span className="text-sm font-semibold text-slate-800 dark:text-slate-200 group-hover/skill:text-violet-600 dark:group-hover/skill:text-violet-400 transition-colors">
+                          <span className="text-sm font-semibold text-black dark:text-slate-200 group-hover/skill:text-violet-600 dark:group-hover/skill:text-violet-400 transition-colors">
                             {skill.name}
                           </span>
                           <span className="text-xs font-mono font-medium text-slate-500 dark:text-slate-400">{skill.level}%</span>

@@ -146,7 +146,7 @@ const Project = () => {
             <Folder size={12} />
             <span>Professional Experience</span>
           </div>
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-slate-900 dark:text-white">Software & Systems Development</h2>
+          <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-black dark:text-white">Software & Systems Development</h2>
           <p className="text-slate-600 dark:text-slate-400 text-base md:text-lg max-w-3xl leading-relaxed">
             A catalog of business management systems, scalable system architectures, and AI-driven automation workflows I have designed and developed.
           </p>
@@ -197,7 +197,7 @@ const Project = () => {
                       <IconComponent size={18} className="text-slate-400 dark:text-slate-500" />
                     </div>
 
-                    <h3 className="text-xl font-bold text-slate-900 dark:text-slate-100 group-hover:text-violet-600 dark:group-hover:text-violet-400 transition-colors">
+                    <h3 className="text-xl font-bold text-black dark:text-slate-100 group-hover:text-violet-600 dark:group-hover:text-violet-400 transition-colors">
                       {project.title}
                     </h3>
                     

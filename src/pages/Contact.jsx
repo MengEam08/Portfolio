@@ -98,7 +98,7 @@ const Contact = () => {
             <MessageSquare size={13} />
             <span>Support &amp; Inquiries</span>
           </div>
-          <h1 className="text-3xl md:text-4xl font-bold tracking-tight text-slate-900 dark:text-white">
+          <h1 className="text-3xl md:text-4xl font-bold tracking-tight text-black dark:text-white">
             Get In Touch
           </h1>
           <p className="text-slate-600 dark:text-slate-400 text-base md:text-lg max-w-2xl leading-relaxed">
@@ -129,7 +129,7 @@ const Contact = () => {
                   </div>
 
                   <div className="flex flex-col gap-2 max-w-md">
-                    <h3 className="text-2xl font-bold text-slate-900 dark:text-white">
+                    <h3 className="text-2xl font-bold text-black dark:text-white">
                       Message Transmitted!
                     </h3>
                     <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">

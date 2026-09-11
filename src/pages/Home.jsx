@@ -247,7 +247,7 @@ const Home = () => {
         {/* WHAT I DO & MY SKILLS */}
         <section className="flex flex-col gap-8 animate-slide-up delay-300">
           <div className="flex flex-col gap-4">
-            <h2 className="text-2xl md:text-3xl font-bold tracking-tight text-slate-900 dark:text-white">
+            <h2 className="text-2xl md:text-3xl font-bold tracking-tight text-black dark:text-white">
               What I Do
             </h2>
             <p className="text-slate-600 dark:text-slate-400 text-base leading-relaxed max-w-4xl">
@@ -274,7 +274,7 @@ const Home = () => {
                 className={`h-full ${item.colSpan}`}
               >
                 <div className="glass-panel rounded-2xl p-6 h-full flex flex-col justify-center hover:shadow-[0_0_20px_rgba(124,58,237,0.06)] dark:hover:shadow-[0_0_20px_rgba(124,58,237,0.1)] transition-all duration-300">
-                  <h3 className="text-lg font-bold mb-2 text-slate-800 dark:text-slate-200">
+                  <h3 className="text-lg font-bold mb-2 text-black dark:text-slate-200">
                     {item.title}
                   </h3>
                   <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">

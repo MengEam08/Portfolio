@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import { BrowserRouter, Route, Routes } from "react-router";
 import "./App.css";
 import Home from "./pages/Home";
@@ -7,6 +8,23 @@ import Contact from "./pages/Contact";
 import TargetCursor from "./components/common/TargetCursor";
 
 export default function App() {
+  const [isDark, setIsDark] = useState(
+    () => document.documentElement.classList.contains("dark")
+  );
+
+  useEffect(() => {
+    const observer = new MutationObserver(() => {
+      setIsDark(document.documentElement.classList.contains("dark"));
+    });
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["class"],
+    });
+    return () => observer.disconnect();
+  }, []);
+
+  const cursorColor = isDark ? "#ffffff" : "#7733F4";
+
   return (
     <BrowserRouter>
       <TargetCursor 
@@ -14,7 +32,7 @@ export default function App() {
         hideDefaultCursor
         parallaxOn
         hoverDuration={0.2}
-        cursorColor="#ffffff"
+        cursorColor={cursorColor}
         cursorColorOnTarget="#B497CF"
       />
       <Routes>
