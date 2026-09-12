@@ -11,6 +11,7 @@ import {
 } from "lucide-react";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import smeLogo from "../../assets/sme-Fav.png";
 
 const MyNavbar = ({ theme, toggleTheme }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -39,7 +40,7 @@ const MyNavbar = ({ theme, toggleTheme }) => {
         {/* Brand Logo */}
         <Link to="/" className="flex items-center gap-2 group">
           <span className="text-xl font-bold tracking-tight bg-gradient-to-r from-violet-600 to-indigo-600 dark:from-violet-400 dark:to-indigo-400 bg-clip-text text-transparent group-hover:from-violet-500 dark:group-hover:from-violet-300 group-hover:to-indigo-500 dark:group-hover:to-indigo-300 transition-colors">
-            Meng
+            <img src={smeLogo} alt="SME Logo" className="w-10 h-10" />
           </span>
           <span className="w-1.5 h-1.5 rounded-full bg-violet-500 animate-pulse"></span>
         </Link>
