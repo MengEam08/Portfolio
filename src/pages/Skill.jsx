@@ -140,7 +140,7 @@ const Skill = () => {
                 className="h-full"
               >
                 <div
-                  className="bg-slate-100/40 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 flex flex-col gap-6 h-full hover:border-slate-300 dark:hover:border-slate-700 transition-colors duration-300"
+                  className="glass-panel rounded-2xl p-6 flex flex-col gap-6 h-full hover:border-slate-300 dark:hover:border-white/20 transition-colors duration-300"
                 >
                   <div className="flex items-center gap-3">
                     <div className={`p-2.5 rounded-xl border ${group.color}`}>

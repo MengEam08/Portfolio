@@ -109,14 +109,14 @@
 
 /* Glassmorphism & Neon Glow Utilities */
 .glass-panel {
-  background: rgba(255, 255, 255, 0.75);
+  background: rgba(255, 255, 255, 0.35);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(0, 0, 0, 0.06);
+  border: 1px solid rgba(15, 23, 42, 0.08);
 }
 
 .dark .glass-panel {
-  background: rgba(15, 23, 42, 0.45);
+  background: rgba(15, 23, 42, 0.28);
   border: 1px solid rgba(255, 255, 255, 0.08);
 }
 

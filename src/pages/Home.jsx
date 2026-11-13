@@ -1,35 +1,17 @@
 import { useEffect } from "react";
 import Layout from "../components/layout/Layout";
 import myfav from "../assets/myFav.png";
-import { Activity } from "lucide-react";
+import { Activity, Layers, Code2, Cpu, ShieldCheck } from "lucide-react";
 import Dock from "../components/common/Dock";
 import BorderGlow from "../components/common/BorderGlow";
 import ScrollReveal from "../components/common/ScrollReveal";
 
 const socialLinks = [
-  {
-    label: "Facebook",
-    href: "https://facebook.com/",
-    style: "bg-[#1877F2]/10 border-[#1877F2]/30 text-[#1877F2] hover:bg-[#1877F2]/20 hover:border-[#1877F2]/60 hover:shadow-[0_0_16px_rgba(24,119,242,0.35)]",
-    icon: (
-      <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
-        <path d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078v-3.49h3.047V9.41c0-3.025 1.792-4.697 4.533-4.697 1.312 0 2.686.236 2.686.236v2.97h-1.513c-1.491 0-1.956.93-1.956 1.884v2.25h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073z"/>
-      </svg>
-    )
-  },
-  {
-    label: "Instagram",
-    href: "https://instagram.com/",
-    style: "bg-pink-500/10 border-pink-500/30 text-pink-500 hover:bg-pink-500/20 hover:border-pink-500/60 hover:shadow-[0_0_16px_rgba(236,72,153,0.35)]",
-    icon: (
-      <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
-        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/>
-      </svg>
-    )
-  },
+ 
+ 
   {
     label: "LinkedIn",
-    href: "https://linkedin.com/in/",
+    href: "https://www.linkedin.com/in/mengeam-seng-80262b336/",
     style: "bg-[#0A66C2]/10 border-[#0A66C2]/30 text-[#0A66C2] hover:bg-[#0A66C2]/20 hover:border-[#0A66C2]/60 hover:shadow-[0_0_16px_rgba(10,102,194,0.35)]",
     icon: (
       <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
@@ -49,7 +31,7 @@ const socialLinks = [
   },
   {
     label: "Gmail",
-    href: "mailto:mengEam@gmail.com",
+    href: "mailto:mengeam55@gmail.com",
     style: "bg-red-500/10 border-red-500/30 text-red-500 hover:bg-red-500/20 hover:border-red-500/60 hover:shadow-[0_0_16px_rgba(239,68,68,0.35)]",
     icon: (
       <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
@@ -74,82 +56,65 @@ const socialLinks = [
 
 const whatIDoItems = [
   {
+    index: "01",
+    tag: "DESIGN",
     title: "UI/UX Design",
-    desc: "Figma, FigJam, wireframes, prototypes, user flows, website UI/UX.",
+    desc: "Crafting intuitive wireframes, interactive prototypes, and user flows for modern web and mobile interfaces.",
+    tags: ["Figma", "FigJam", "Wireframes", "Prototypes", "User Flows"],
+    icon: Layers,
     glowColor: "270 80 80",
     colors: ["#c084fc", "#f472b6", "#38bdf8"],
+    accentBg: "bg-fuchsia-500/10 border-fuchsia-500/25 text-fuchsia-600 dark:text-fuchsia-400",
+    ambientGlow: "from-fuchsia-500/15 via-violet-500/5 to-transparent",
+    titleHover: "group-hover:text-fuchsia-600 dark:group-hover:text-fuchsia-300",
+    pillHover: "group-hover:border-fuchsia-500/30",
     colSpan: ""
   },
   {
+    index: "02",
+    tag: "FRONTEND",
     title: "Frontend Development",
-    desc: "React, React Native, JavaScript, TypeScript, JSX, TSX, HTML, Tailwind CSS.",
+    desc: "Building responsive, accessible interfaces and cross-platform apps with modern component architectures.",
+    tags: ["React", "React Native", "TypeScript", "JavaScript", "Tailwind CSS"],
+    icon: Code2,
     glowColor: "240 80 80",
     colors: ["#818cf8", "#6366f1", "#38bdf8"],
+    accentBg: "bg-indigo-500/10 border-indigo-500/25 text-indigo-600 dark:text-indigo-400",
+    ambientGlow: "from-indigo-500/15 via-blue-500/5 to-transparent",
+    titleHover: "group-hover:text-indigo-600 dark:group-hover:text-indigo-300",
+    pillHover: "group-hover:border-indigo-500/30",
     colSpan: ""
   },
   {
+    index: "03",
+    tag: "SYSTEMS",
     title: "Application Development",
-    desc: "Internal management systems, attendance systems, tracking applications, automation tools, and mini systems.",
+    desc: "Engineering internal management tools, attendance & tracking systems, and workflow automation.",
+    tags: ["Internal Systems", "Attendance", "Tracking Apps", "Automation"],
+    icon: Cpu,
     glowColor: "190 80 80",
     colors: ["#38bdf8", "#06b6d4", "#818cf8"],
+    accentBg: "bg-sky-500/10 border-sky-500/25 text-sky-600 dark:text-sky-400",
+    ambientGlow: "from-sky-500/15 via-cyan-500/5 to-transparent",
+    titleHover: "group-hover:text-sky-600 dark:group-hover:text-sky-300",
+    pillHover: "group-hover:border-sky-500/30",
     colSpan: ""
   },
   {
+    index: "04",
+    tag: "QUALITY",
     title: "QA & Testing",
-    desc: "Functional testing, regression testing, UI testing, workflow testing, HRM and operations system testing.",
+    desc: "Validating end-to-end reliability across HRM and operations platforms through structured test workflows.",
+    tags: ["Functional QA", "Regression", "UI Testing", "HRM Workflows"],
+    icon: ShieldCheck,
     glowColor: "150 80 80",
     colors: ["#34d399", "#10b981", "#38bdf8"],
+    accentBg: "bg-emerald-500/10 border-emerald-500/25 text-emerald-600 dark:text-emerald-400",
+    ambientGlow: "from-emerald-500/15 via-teal-500/5 to-transparent",
+    titleHover: "group-hover:text-emerald-600 dark:group-hover:text-emerald-300",
+    pillHover: "group-hover:border-emerald-500/30",
     colSpan: ""
   },
-  {
-    title: "System Analysis",
-    desc: "Business requirements, workflow design, process mapping, system feature analysis, and documentation.",
-    glowColor: "35 90 70",
-    colors: ["#fbbf24", "#f59e0b", "#f472b6"],
-    colSpan: ""
-  },
-  {
-    title: "Website Management",
-    desc: "WordPress administration, content management, website updates, and UI feedback.",
-    glowColor: "340 80 80",
-    colors: ["#fb7185", "#f43f5e", "#c084fc"],
-    colSpan: ""
-  },
-  {
-    title: "Automation",
-    desc: "Telegram bots, scheduled notifications, data processing, and workflow automation.",
-    glowColor: "200 85 75",
-    colors: ["#38bdf8", "#0284c7", "#a855f7"],
-    colSpan: ""
-  },
-  {
-    title: "Database",
-    desc: "SQLite and PostgreSQL fundamentals, CRUD operations, data export, and local storage.",
-    glowColor: "290 80 80",
-    colors: ["#e879f9", "#d946ef", "#818cf8"],
-    colSpan: ""
-  },
-  {
-    title: "Cloud & Infrastructure",
-    desc: "VPS, cloud hosting, DNS, SSL, backups, storage, Redis, and basic server architecture.",
-    glowColor: "215 85 75",
-    colors: ["#60a5fa", "#3b82f6", "#2dd4bf"],
-    colSpan: ""
-  },
-  {
-    title: "IT Support",
-    desc: "Networking, Windows troubleshooting, application installation, configuration, SSD/storage management, and cross-platform storage.",
-    glowColor: "25 90 70",
-    colors: ["#fb923c", "#f97316", "#fbbf24"],
-    colSpan: ""
-  },
-  {
-    title: "Generative AI",
-    desc: "AI-assisted coding, LLMs, prompt engineering, AI-powered research, test-case generation, documentation, UI ideation, debugging, automation, and local AI experimentation.",
-    glowColor: "170 80 75",
-    colors: ["#2dd4bf", "#14b8a6", "#818cf8"],
-    colSpan: "md:col-span-2 lg:col-span-2"
-  }
 ];
 
 const Home = () => {
@@ -261,28 +226,74 @@ const Home = () => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {whatIDoItems.map((item, idx) => (
-              <BorderGlow
-                key={idx}
-                borderRadius={16}
-                edgeSensitivity={30}
-                glowRadius={35}
-                glowIntensity={1}
-                colors={item.colors}
-                glowColor={item.glowColor}
-                className={`h-full ${item.colSpan}`}
-              >
-                <div className="glass-panel rounded-2xl p-6 h-full flex flex-col justify-center hover:shadow-[0_0_20px_rgba(124,58,237,0.06)] dark:hover:shadow-[0_0_20px_rgba(124,58,237,0.1)] transition-all duration-300">
-                  <h3 className="text-lg font-bold mb-2 text-black dark:text-slate-200">
-                    {item.title}
-                  </h3>
-                  <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
-                    {item.desc}
-                  </p>
-                </div>
-              </BorderGlow>
-            ))}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {whatIDoItems.map((item, idx) => {
+              const IconComponent = item.icon;
+              return (
+                <BorderGlow
+                  key={idx}
+                  borderRadius={16}
+                  edgeSensitivity={30}
+                  glowRadius={35}
+                  glowIntensity={1}
+                  colors={item.colors}
+                  glowColor={item.glowColor}
+                  className={`h-full ${item.colSpan}`}
+                >
+                  <div className="group relative overflow-hidden glass-panel rounded-2xl p-6 sm:p-7 h-full flex flex-col justify-between gap-6 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_12px_30px_rgba(15,23,42,0.08)] dark:hover:shadow-[0_12px_32px_rgba(0,0,0,0.45)]">
+                    {/* Ambient top-right gradient wash on hover */}
+                    <div
+                      className={`pointer-events-none absolute -top-16 -right-16 w-48 h-48 rounded-full bg-gradient-to-br ${item.ambientGlow} blur-2xl opacity-40 group-hover:opacity-100 transition-opacity duration-500`}
+                    />
+
+                    {/* Subtle top hairline accent */}
+                    <div
+                      className="pointer-events-none absolute inset-x-6 top-0 h-px opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                      style={{
+                        background: `linear-gradient(90deg, transparent, ${item.colors[0]}, ${item.colors[1]}, transparent)`
+                      }}
+                    />
+
+                    <div className="relative z-10 flex flex-col gap-4">
+                      {/* Card Header: Icon Badge + Index Tag */}
+                      <div className="flex items-center justify-between gap-3">
+                        <div
+                          className={`w-11 h-11 rounded-xl border flex items-center justify-center transition-transform duration-300 group-hover:scale-105 ${item.accentBg}`}
+                        >
+                          <IconComponent size={20} strokeWidth={1.85} />
+                        </div>
+
+                        <span className="font-mono text-[11px] font-semibold tracking-widest uppercase text-slate-400 dark:text-slate-500 bg-slate-900/[0.04] dark:bg-white/[0.04] border border-slate-200/70 dark:border-white/10 px-2.5 py-1 rounded-full">
+                          {item.index} // {item.tag}
+                        </span>
+                      </div>
+
+                      {/* Title & Description */}
+                      <div className="flex flex-col gap-2">
+                        <h3 className={`text-xl font-bold tracking-tight text-black dark:text-slate-100 transition-colors duration-300 ${item.titleHover}`}>
+                          {item.title}
+                        </h3>
+                        <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+                          {item.desc}
+                        </p>
+                      </div>
+                    </div>
+
+                    {/* Skill / Tech Chips */}
+                    <div className="relative z-10 flex flex-wrap gap-1.5 pt-4 border-t border-slate-200/60 dark:border-white/[0.07]">
+                      {item.tags.map((tag, tIdx) => (
+                        <span
+                          key={tIdx}
+                          className={`font-mono text-[11px] font-medium text-slate-600 dark:text-slate-300 bg-slate-900/[0.035] dark:bg-white/[0.04] border border-slate-200/70 dark:border-white/10 px-2.5 py-1 rounded-md transition-colors duration-300 ${item.pillHover}`}
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </BorderGlow>
+              );
+            })}
           </div>
         </section>
       </div>
